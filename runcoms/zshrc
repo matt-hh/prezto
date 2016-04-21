@@ -11,3 +11,23 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
+
+alias m="mate $1"
+alias s="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' $1"
+
+alias la="ls -al"
+# alias homebrew_upgrade='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
+
+# rails
+
+alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
+
+# git
+
+alias glo='git log --oneline'
+alias gss='git status -s'
+alias gdc='git diff --cached'
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
